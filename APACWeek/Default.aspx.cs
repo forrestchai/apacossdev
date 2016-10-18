@@ -17,6 +17,12 @@ namespace APACWeek
         protected void Page_Load(object sender, EventArgs e)
         {
             string Locations = GetLocations();
+            speakerList();
+
+            #region BingMap
+            //key01 - AgXKm8OLInJYX5oyF7NgYNR3hwqgg4ob8YkwakLO6QjH4qVsBEhHRD3_TCHW1118
+            //key02 - As3qu8i9X85id_vVtM8aGRJu7FLLXepXmH6HiepeHBZ3E_7SiToWkPn4pPl1438n
+
 
             Literal1.Text = @"
                 <script type='text/javascript' src='http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0'>
@@ -25,9 +31,9 @@ namespace APACWeek
                 <script type='text/javascript'>
 
                     var  map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
-                            credentials: 'AgXKm8OLInJYX5oyF7NgYNR3hwqgg4ob8YkwakLO6QjH4qVsBEhHRD3_TCHW1118'
+                            credentials: 'As3qu8i9X85id_vVtM8aGRJu7FLLXepXmH6HiepeHBZ3E_7SiToWkPn4pPl1438n'
                         });
-
+                    
                     map.setView({
                         mapTypeId: Microsoft.Maps.MapTypeId.road,
                         center: new Microsoft.Maps.Location(" + country_lat + @", " + country_lon + @"),
@@ -52,87 +58,92 @@ namespace APACWeek
                         }
                     }
                 </script>";
-
-
+            #endregion
+        }
+        public void speakerList()
+        {
             var Speakers = new List<Speaker>();
+            //Keynote
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Janakiram MSV (Keynote)",
+                Country = "India",
+                PhotoPath = "images\\janakiram.PNG",
+                Profile = $"Janakiram MSV is an analyst, advisor and an architect at Janakiram & Associates. He was the founder and CTO of Get Cloud Ready Consulting, a niche Cloud Migration and Cloud Operations firm that got acquired by Aditi Technologies. Through his speaking, writing and analysis, he helps businesses take advantage of the emerging technologies. Janakiram is one of the first few Microsoft Certified Azure Professionals in India. He is one of the few professionals with Amazon Certified Solution Architect, Amazon Certified Developer and Amazon Certified SysOps Administrator credentials. He is also a Google Qualified Cloud Developer. Janakiram is recognised by Google as the Google Developer Expert (GDE) for his subject matter expertise. He is awarded the title of Regional Director by Microsoft Corporation."
+            });
+            //Influencers Australia
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Martin Abbott",
+                Country = "Australia",
+                PhotoPath = "images\\martin.PNG",
+                Profile = $"An experienced Architect with over 10 years experience designing and developing software and integration solutions for a diverse range of organizations including financial sector and government. Experience of working across all parts of customer engagement, from pre-sales and bid work to project delivery and support. Recently being appointed CTO at Satalyst in Perth, I’m an Agile development advocate, strong on using process and governance to drive quality."
+            });
+            //Influencers Australia
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Mick Badran",
+                Country = "Australia",
+                PhotoPath = "images\\mick.PNG",
+                Profile = $"Mick has a strong applied technical focus predominately in the Application Integration space, from interactive endpoints through to Analytics and BI stacks. High performance near real time interfaces is his specialty. Mick is a Microsoft Azure Integration MVP with a strong focus on Integration stacks Having an equal balance between training and the consulting worlds with 15 years of leading a technical team to create innovative solutions."
+            });
 
-
-            #region PLEASE REPLACE THIS CODE WITH ACTUAL DATA
-
-                //Keynote
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"Janakiram MSV (Keynote)",
-                    Country = "India",
-                    PhotoPath = "images\\janakiram.PNG",
-                    Profile = $"Janakiram MSV is an analyst, advisor and an architect at Janakiram & Associates. He was the founder and CTO of Get Cloud Ready Consulting, a niche Cloud Migration and Cloud Operations firm that got acquired by Aditi Technologies. Through his speaking, writing and analysis, he helps businesses take advantage of the emerging technologies. Janakiram is one of the first few Microsoft Certified Azure Professionals in India. He is one of the few professionals with Amazon Certified Solution Architect, Amazon Certified Developer and Amazon Certified SysOps Administrator credentials. He is also a Google Qualified Cloud Developer. Janakiram is recognised by Google as the Google Developer Expert (GDE) for his subject matter expertise. He is awarded the title of Regional Director by Microsoft Corporation."
-                });
-                //Influencers Australia
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"Martin Abbott",
-                    Country = "Australia",
-                    PhotoPath = "images\\martin.PNG",
-                    Profile = $"An experienced Architect with over 10 years experience designing and developing software and integration solutions for a diverse range of organizations including financial sector and government. Experience of working across all parts of customer engagement, from pre-sales and bid work to project delivery and support. Recently being appointed CTO at Satalyst in Perth, I’m an Agile development advocate, strong on using process and governance to drive quality."
-                });
-                //Influencers Australia
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"Mick Badran",
-                    Country = "Australia",
-                    PhotoPath = "images\\mick.PNG",
-                    Profile = $"Mick has a strong applied technical focus predominately in the Application Integration space, from interactive endpoints through to Analytics and BI stacks. High performance near real time interfaces is his specialty. Mick is a Microsoft Azure Integration MVP with a strong focus on Integration stacks Having an equal balance between training and the consulting worlds with 15 years of leading a technical team to create innovative solutions."
-                });
-
-                //Influencers Indonesia
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"Muhammad Ibnu Fadhil",
-                    Country = "Indonesia",
-                    PhotoPath = "images\\fadhil.PNG",
-                    Profile = $"I’m an entrepreneur, coder, and community contributor. In 2010, my friends and I have established our own start-up, Gravicode. we provide consultation services and software development solution with Microsoft based framework. In my daily activities, I conduct my own research by adopting new technology, share it on a blog and use it on our solution to our customers. Currently, I would like to give more contribution to the IT community. My interests are mostly in cloud, mobile and IoT. As a software development professional, I’ve been managing and developing more than 30 software projects."
-                });
-                //Influencers Indonesia
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"Andri Yadi",
-                    Country = "Indonesia",
-                    PhotoPath = "images\\andri.PNG",
-                    Profile = $"Being an autodidactic entrepreneur for 12 years, he has co-founded 4 software companies since 2003 and his last company, DyCode, has been around for 8 years and has become an award-winning, high profile software development company in Indonesia. Under DyCode, he co-created two well-known products, Movreak and Jepret, that both have won 6 awards so far and already well-monetized."
-                });
-                //Influencers Korea
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"Min-Gyu Ju",
-                    Country = "Korea",
-                    PhotoPath = "images\\mingyu.PNG",
-                    Profile = $"Min-Gyu Ju is the CEO of RecursiveSoft, Inc. which builds IoT devices specialized in Bluetooth Smart Mesh. He is focused to re-define THINGS and connect them to our lives. He is an affiliated professor of Youngsan University in Busan and also leads the community ‘Smart App Developer Forum’ with more than 3K members."
-                });
-                //Influencers Malaysia
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"Chia Shaw Chin",
-                    Country = "Malaysia",
-                    PhotoPath = "images\\chia.PNG",
-                    Profile = $"Chia, a passionate Windows Mobile developer, early adopters for Universal Windows Platform, actively develop local contents apps on UWP. As a MVP and MCT, Chia is always sharing his knowledge with the local communities."
-                });
-                //Influencers New Zealand
-                Speakers.Add(new Speaker()
-                {
-                    Name = $"John McDermott",
-                    Country = "New Zealand",
-                    PhotoPath = "images\\john.PNG",
-                    Profile = $"John McDermott is an Internet of Things entrepreneur and runs the IoT Auckland Meetup group.  He is an electronics and software engineer, with extensive product management and marketing experience in telecom and utility industries.  John has interests in several wireless technologies from NFC to LPWAN, and is using these to create new IoT applications.  The IoT Auckland Meetup group has over 500 members and meets monthly to discover new technologies, applications and opportunities."
-                });
-
+            //Influencers Indonesia
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Muhammad Ibnu Fadhil",
+                Country = "Indonesia",
+                PhotoPath = "images\\fadhil.PNG",
+                Profile = $"I’m an entrepreneur, coder, and community contributor. In 2010, my friends and I have established our own start-up, Gravicode. we provide consultation services and software development solution with Microsoft based framework. In my daily activities, I conduct my own research by adopting new technology, share it on a blog and use it on our solution to our customers. Currently, I would like to give more contribution to the IT community. My interests are mostly in cloud, mobile and IoT. As a software development professional, I’ve been managing and developing more than 30 software projects."
+            });
+            //Influencers Indonesia
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Andri Yadi",
+                Country = "Indonesia",
+                PhotoPath = "images\\andri.PNG",
+                Profile = $"Being an autodidactic entrepreneur for 12 years, he has co-founded 4 software companies since 2003 and his last company, DyCode, has been around for 8 years and has become an award-winning, high profile software development company in Indonesia. Under DyCode, he co-created two well-known products, Movreak and Jepret, that both have won 6 awards so far and already well-monetized."
+            });
+            //Influencers Korea
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Min-Gyu Ju",
+                Country = "Korea",
+                PhotoPath = "images\\mingyu.PNG",
+                Profile = $"Min-Gyu Ju is the CEO of RecursiveSoft, Inc. which builds IoT devices specialized in Bluetooth Smart Mesh. He is focused to re-define THINGS and connect them to our lives. He is an affiliated professor of Youngsan University in Busan and also leads the community ‘Smart App Developer Forum’ with more than 3K members."
+            });
+            //Influencers Malaysia
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Chia Shaw Chyn",
+                Country = "Malaysia",
+                PhotoPath = "images\\chia.PNG",
+                Profile = $"Chia, a passionate Windows Mobile developer, early adopters for Universal Windows Platform, actively develop local contents apps on UWP. As a MVP and MCT, Chia is always sharing his knowledge with the local communities."
+            });
+            //Influencers New Zealand
+            Speakers.Add(new Speaker()
+            {
+                Name = $"John McDermott",
+                Country = "New Zealand",
+                PhotoPath = "images\\john.PNG",
+                Profile = $"John McDermott is an Internet of Things entrepreneur and runs the IoT Auckland Meetup group.  He is an electronics and software engineer, with extensive product management and marketing experience in telecom and utility industries.  John has interests in several wireless technologies from NFC to LPWAN, and is using these to create new IoT applications.  The IoT Auckland Meetup group has over 500 members and meets monthly to discover new technologies, applications and opportunities."
+            });
+            //Influencers Philippines
+            Speakers.Add(new Speaker()
+            {
+                Name = $"Christopher Misola",
+                Country = "Philippines",
+                PhotoPath = "images\\chris.PNG",
+                Profile = $"Chris was a technical evangelist in Microsoft for 4 years. With great skill set and knowledge in the field of IT, he is currently leading the community on Azure IoT."
+            });
             //Influencers Sri Lanka
             Speakers.Add(new Speaker()
-                {
-                    Name = $"Shameera Prajapriya",
-                    Country = "Sri Lanka",
-                    PhotoPath = "images\\shameera.PNG",
-                    Profile = $"Shameera, Solution Architect from LAUGFS Holdings Limited Sri Lanka, started re-working on some architectures on the projects he was working on, based on the bunch of new things he learnt at the camp. After the training event, he is planning to write few blog lessons related to Azure IoT Hub / Cognitive Services and ML with all the development steps."
-                });
+            {
+                Name = $"Shameera Prajapriya",
+                Country = "Sri Lanka",
+                PhotoPath = "images\\shameera.PNG",
+                Profile = $"Shameera, Solution Architect from LAUGFS Holdings Limited Sri Lanka, started re-working on some architectures on the projects he was working on, based on the bunch of new things he learnt at the camp. After the training event, he is planning to write few blog lessons related to Azure IoT Hub / Cognitive Services and ML with all the development steps."
+            });
             //Influencers Sri Lanka
             Speakers.Add(new Speaker()
             {
@@ -165,37 +176,23 @@ namespace APACWeek
                 PhotoPath = "images\\pham.PNG",
                 Profile = $"Dat is a technical consultant for some companies he also works on IoT projects. He is technical expert, but hasn’t been active community influencer now. However, he is potential influencer for Microsoft technologies as he has good impact to enterprise companies. He also agree to contribute for communities from now on, it is reason why we would like to nominate him for this, it will help a lot for Vietnam tech communities."
             });
-
-
-            #endregion
-
-
             SpeakerRepeater.DataSource = Speakers;
             SpeakerRepeater.DataBind();
         }
-
         public string GetCountry()
         {
+            string country = "";
             string UserIP = "";
             UserIP = GetIP4Address();
             string url = "http://freegeoip.net/json/" + UserIP.ToString();
             WebClient client = new WebClient();
             string jsonstring = client.DownloadString(url);
             dynamic dynObj = JsonConvert.DeserializeObject(jsonstring);
-            System.Web.HttpContext.Current.Session["country_name"] = dynObj.country_name;
-            //System.Web.HttpContext.Current.Session["latitude"] = dynObj.latitude;
-            //System.Web.HttpContext.Current.Session["longitude"] = dynObj.longitude;
-
-            //country_lat = dynObj.latitude;
-            //country_lon = dynObj.longitude;
-
-            string country = "";
+            System.Web.HttpContext.Current.Session["country_name"] = dynObj.country_name;          
             country = dynObj.country_name;
 
             return country;
         }
-
-
         public string GetLocations()
         {
             PanelEvent.Visible = false;
@@ -296,7 +293,7 @@ namespace APACWeek
                         events.Add(new Event()
                         {
                             StartDateTime = new DateTime(2016, 10, 29, 9, 0, 0),
-                            EndDateTime = new DateTime(2016, 10, 29, 18, 0, 0),
+                            EndDateTime = new DateTime(2016, 10, 29, 17, 0, 0),
                             Location = "Microsoft Malaysia, Kuala Lumpur",
                             RegistrationUrl = "https://www.meetup.com/Microsoft-Developer-Malaysia/events/234587811/",
                             Latitude = 3.156591,
@@ -334,10 +331,10 @@ namespace APACWeek
                         //Manila
                         events.Add(new Event()
                         {
-                            StartDateTime = new DateTime(2016, 10, 29, 8, 0, 0),
-                            EndDateTime = new DateTime(2016, 10, 29, 17, 0, 0),
+                            StartDateTime = new DateTime(2016, 10, 29, 9, 0, 0),
+                            EndDateTime = new DateTime(2016, 10, 29, 18, 0, 0),
                             Location = "Microsoft Philippines",
-                            RegistrationUrl = "https://www.facebook.com/events/1164599236939384",
+                            RegistrationUrl = "https://www.eventbrite.com/e/apac-azure-iot-weekend-makati-tickets-28676085945",
                             Latitude = 14.555731,
                             Longitude = 121.020949
                         });
