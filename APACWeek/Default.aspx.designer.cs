@@ -22,15 +22,6 @@ namespace APACWeek {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// SpeakerRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater SpeakerRepeater;
-        
-        /// <summary>
         /// MsgPanel control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace APACWeek {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelEvent;
+        
+        /// <summary>
+        /// UpcomingEventRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater UpcomingEventRepeater;
         
         /// <summary>
         /// EventRepeater control.

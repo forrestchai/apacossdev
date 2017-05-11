@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace APACWeek.Models
 {
-    public class Event
+    public class UpEvent
     {
         public DateTime StartDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
