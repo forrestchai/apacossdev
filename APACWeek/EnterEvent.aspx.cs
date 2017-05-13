@@ -13,10 +13,10 @@ namespace APACWeek
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("ENTER EVENT CODE RUNNING _____________________");
+            System.Diagnostics.Debug.WriteLine("ENTER EVENT CODE RUNNING _____________________");
         }
 
-        public void submitButtonEvent()
+        public void submitButtonEvent(object sender, EventArgs e)
         {
             string locationName;
             string eventName;
@@ -26,19 +26,19 @@ namespace APACWeek
             string eventUrl;
 
 
-            locationName = String.Format("{0}", Request.Form["location1"]);
-            eventName = String.Format("{0}", Request.Form["name1"]);
-            eventDate = DateTime.Parse(Request.Form["date1"]);
-            eventStartTime = TimeSpan.Parse(Request.Form["startTime1"]);
-            eventEndTime = TimeSpan.Parse(Request.Form["endTime1"]);
-            eventUrl = String.Format("{5}", Request.Form["url1"]);
+            locationName = location1.Value; //String.Format("{0}", Request.Form["location1"]);
+            eventName = name1.Value; //String.Format("{0}", Request.Form["name1"]);
+            eventDate = DateTime.Parse(date1.Value); //DateTime.Parse(Request.Form["date1"]);
+            eventStartTime = TimeSpan.Parse(startTime1.Value); //TimeSpan.Parse(Request.Form["startTime1"]);
+            eventEndTime = TimeSpan.Parse(endTime1.Value); //TimeSpan.Parse(Request.Form["endTime1"]);
+            eventUrl = url1.Value; //String.Format("{5}", Request.Form["url1"]);
 
-            Console.WriteLine("locaiton name: "+locationName);
-            Console.WriteLine("name " + eventName);
-            Console.WriteLine("Date " + eventDate);
-            Console.WriteLine("Start " + eventStartTime);
-            Console.WriteLine("End time " + eventEndTime);
-            Console.WriteLine("Url " + eventUrl);
+            System.Diagnostics.Debug.WriteLine("locaiton name: "+locationName);
+            System.Diagnostics.Debug.WriteLine("name " + eventName);
+            System.Diagnostics.Debug.WriteLine("Date " + eventDate);
+            System.Diagnostics.Debug.WriteLine("Start " + eventStartTime);
+            System.Diagnostics.Debug.WriteLine("End time " + eventEndTime);
+            System.Diagnostics.Debug.WriteLine("Url " + eventUrl);
 
         }
 

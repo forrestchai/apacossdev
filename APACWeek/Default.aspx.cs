@@ -19,6 +19,8 @@ namespace APACWeek
         protected void Page_Load(object sender, EventArgs e)
         {
             string Locations = GetLocations();
+
+            System.Diagnostics.Debug.WriteLine("ENTER EVENT CODE RUNNING _____________________");
             
             System.Diagnostics.Trace.TraceInformation("Information");
             System.Diagnostics.Trace.TraceWarning("Warning");

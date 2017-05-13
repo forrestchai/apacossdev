@@ -25,7 +25,6 @@
     
 </head>
 <body>
-    <form id="form1" runat="server">
         <div style="background-color: #00198D;">
             <img class="center-block img-responsive" src="images/banner-lg.png" />
         </div>
@@ -46,20 +45,20 @@
                 </div>
             </div>
 
-            <form method="post" action="">
+            <form method="post" runat="server">
                 Location:<br />
-                <input type="text" name="Location" id="location1" value="" /><br />
+                <input type="text" runat="server" name="Location" id="location1" value="" /><br />
                 Event Name:<br />
-                <input type="text" name="EventName" id="name1" value="" /><br />
+                <input type="text" runat="server" name="EventName" id="name1" value="" /><br />
                 Event Date:<br />
-                <input type="date" name="EventDate" id="date1" value="" /><br />
+                <input type="date" runat="server" name="EventDate" id="date1" value="" /><br />
                 Time:<br />
-                <input type="time" name="EventStart" id="startTime1" value="0000" /> to
-                <input type="time" name="EventEnd" id="endTime1" value="1200"  /><br />
+                <input type="time" runat="server" name="EventStart" id="startTime1" value="0000" /> to
+                <input type="time" runat="server" name="EventEnd" id="endTime1" value="1200"  /><br />
                 Registration Url:<br />
-                <input type="url" name="EventUrl" id="url1" value="" /><br />
-                <br />
-                <input type="submit" value="Submit" name="submitForm" class="submit" onclick="submitButtonEvent"/>
+                <input type="url" runat="server" name="EventUrl" id="url1" value="" /><br />
+                <br /> 
+                <input type="submit" runat="server" value="Submit" name="submitForm" class="submit" onserverclick="submitButtonEvent"/>
 
             </form>
 
@@ -80,6 +79,5 @@
             </div>
 
         </div>
-    </form>
 </body>
 </html>
