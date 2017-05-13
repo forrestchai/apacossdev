@@ -48,18 +48,19 @@
 
             <form method="post" action="">
                 Location:<br />
-                <input type="text" name="Location" value="" /><br />
+                <input type="text" name="Location" id="location1" value="" /><br />
                 Event Name:<br />
-                <input type="text" name="EventName" value="" /><br />
+                <input type="text" name="EventName" id="name1" value="" /><br />
                 Event Date:<br />
-                <input type="date" name="EventDate" value="" /><br />
+                <input type="date" name="EventDate" id="date1" value="" /><br />
                 Time:<br />
-                <input type="time" name="EventStart" value="0000" /> to
-                <input type="time" name="EventEnd" value="1200"  /><br />
+                <input type="time" name="EventStart" id="startTime1" value="0000" /> to
+                <input type="time" name="EventEnd" id="endTime1" value="1200"  /><br />
                 Registration Url:<br />
-                <input type="url" name="EventUrl" value="" /><br />
+                <input type="url" name="EventUrl" id="url1" value="" /><br />
                 <br />
-                <input type="submit" value="Submit" class="submit" />
+                <input type="submit" value="Submit" name="submitForm" class="submit" onclick="submitButtonEvent"/>
+
             </form>
 
             <div class="row">
