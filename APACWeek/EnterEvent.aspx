@@ -58,6 +58,18 @@
                 Registration Url:<br />
                 <input type="url" runat="server" name="EventUrl" id="url1" value="" /><br />
                 <br /> 
+                <asp:DropDownList runat="server" ID="dropDownList1">
+                    <asp:ListItem Selected="True">Please Select</asp:ListItem>                            
+                    <asp:ListItem>Australia</asp:ListItem>
+                    <asp:ListItem>Indonesia</asp:ListItem>
+                    <asp:ListItem>Malaysia</asp:ListItem>
+                    <asp:ListItem>New Zealand</asp:ListItem>
+                    <asp:ListItem>Singapore</asp:ListItem>
+                    <asp:ListItem>Philippines</asp:ListItem>
+                    <asp:ListItem>Thailand</asp:ListItem>
+                    <asp:ListItem>Vietnam</asp:ListItem>
+                </asp:DropDownList> <br /> 
+                <br /> 
                 <input type="submit" runat="server" value="Submit" name="submitForm" class="submit" onserverclick="submitButtonEvent"/>
 
             </form>

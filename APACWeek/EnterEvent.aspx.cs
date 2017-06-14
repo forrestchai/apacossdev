@@ -25,13 +25,15 @@ namespace APACWeek
             TimeSpan eventEndTime;
             string eventUrl;
 
-
             locationName = location1.Value; //String.Format("{0}", Request.Form["location1"]);
             eventName = name1.Value; //String.Format("{0}", Request.Form["name1"]);
+
             eventDate = DateTime.Parse(date1.Value); //DateTime.Parse(Request.Form["date1"]);
             eventStartTime = TimeSpan.Parse(startTime1.Value); //TimeSpan.Parse(Request.Form["startTime1"]);
             eventEndTime = TimeSpan.Parse(endTime1.Value); //TimeSpan.Parse(Request.Form["endTime1"]);
             eventUrl = url1.Value; //String.Format("{5}", Request.Form["url1"]);
+
+            Event newEvent = new Event(eventDate, eventStartTime, eventEndTime, locationName, eventName, eventUrl);
 
             System.Diagnostics.Debug.WriteLine("locaiton name: "+locationName);
             System.Diagnostics.Debug.WriteLine("name " + eventName);
@@ -40,6 +42,7 @@ namespace APACWeek
             System.Diagnostics.Debug.WriteLine("End time " + eventEndTime);
             System.Diagnostics.Debug.WriteLine("Url " + eventUrl);
 
+            uploadEvent(newEvent);
         }
 
         public void uploadEvent(Event e)
